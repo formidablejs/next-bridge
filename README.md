@@ -13,7 +13,7 @@ React server-side rendering for Formidable with [Next.js](https://nextjs.org/doc
   * [React](https://www.npmjs.com/package/react): `>=17.0.2`
   * [React DOM](https://www.npmjs.com/package/react-dom): `>=17.0.2`
 
-## Installation
+## Install
 
 ```bash
 npm install @formidablejs/next-bridge next react react-dom --save
@@ -74,7 +74,7 @@ import { Route } from '@formidablejs/framework'
 Route.get '/post/:id', next!
 ```
 
-In order for a `view` to be loaded for this route, you need to create a `resources/js/pages/post/[id].js` page:
+In order for a post page to be loaded for this route, you need to create a `resources/js/pages/post/[id].js` page:
 
 ```js
 export function getServerSideProps(request) {
