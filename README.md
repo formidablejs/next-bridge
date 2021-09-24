@@ -3,7 +3,7 @@
 React server-side rendering for Formidable with [Next.js](https://nextjs.org/docs/advanced-features/custom-server) framework.
 
 ![npm](https://img.shields.io/npm/v/@formidablejs/next-bridge)
-![GitHub](https://img.shields.io/github/license/formidablejs/next-bridge)
+![GitHub](https://img.shields.io/github/license/@formidablejs/next-bridge)
 
 ## Requirements
 
@@ -45,6 +45,23 @@ export class Config < ConfigRepository
 			next
 		}
 ```
+
+Assuming that this is a new project, you can replace the default `/` route in the `routes/api.imba` file with the following route:
+
+```py
+import { next } from '@formidablejs/next-bridge'
+import { Route } from '@formidablejs/framework'
+
+Route.get '/', next!
+```
+
+When done, you can run the following command to start the server:
+
+```
+craftsman serve --dev
+```
+
+> Visit http://localhost:3000/ to see the rendered page.
 
 ## Usage
 
