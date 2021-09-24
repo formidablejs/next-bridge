@@ -3,7 +3,7 @@
 React server-side rendering for Formidable with [Next.js](https://nextjs.org/docs/advanced-features/custom-server) framework.
 
 ![npm](https://img.shields.io/npm/v/@formidablejs/next-bridge)
-![GitHub](https://img.shields.io/github/license/formidablejs/next-bridge)
+![NPM](https://img.shields.io/npm/l/@formidablejs/next-bridge)
 
 ## Requirements
 
@@ -30,12 +30,11 @@ craftsman publish --package @formidablejs/next-bridge -c -v
 Add `NextjsServiceResolver` in `config/app.imba` under `resolvers`:
 
 ```js
-{
-	...
+...
 
-	resolvers: {
-		...
-		require('@formidablejs/next-bridge').NextjsServiceResolver
+resolvers: {
+	...
+	require('@formidablejs/next-bridge').NextjsServiceResolver
 ```
 
 > Note, `NextjsServiceResolver` must be added after `/app/Resolvers/RouterServiceResolver`.
@@ -44,7 +43,7 @@ Then, register the `next.imba` config file in the `config/index.imba` file:
 
 ```py
 ...
-import next from './next`
+import next from './next'
 
 export class Config < ConfigRepository
 
