@@ -46,7 +46,7 @@ export class Config < ConfigRepository
 		}
 ```
 
-Assuming that this is a new project, you can replace the default `/` route in the `routes/api.imba` file with the following route:
+Assuming that you installed `next-bridge` in a new project, you can replace the default `/` route in the `routes/api.imba` file with the following route:
 
 ```py
 import { next } from '@formidablejs/next-bridge'
