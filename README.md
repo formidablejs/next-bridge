@@ -9,9 +9,9 @@ React server-side rendering for Formidable with [Next.js](https://nextjs.org/doc
 
   * [@formidablejs/craftsman](https://www.npmjs.com/package/@formidablejs/craftsman): `>=0.2.1-alpha.2`
   * [@formidablejs/framework](https://www.npmjs.com/package/@formidablejs/framework): `>=0.2.1-alpha.2`
-  * [Next](https://www.npmjs.com/package/next): `>=11.1.2`
-  * [React](https://www.npmjs.com/package/react): `>=17.0.2`
-  * [React DOM](https://www.npmjs.com/package/react-dom): `>=17.0.2`
+  * [next](https://www.npmjs.com/package/next): `>=11.1.2`
+  * [react-dom](https://www.npmjs.com/package/react-dom): `>=17.0.2`
+  * [react](https://www.npmjs.com/package/react): `>=17.0.2`
 
 ## Install
 
