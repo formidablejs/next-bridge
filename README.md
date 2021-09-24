@@ -27,7 +27,7 @@ craftsman publish --package @formidablejs/next-bridge -c -v
 
 ## Configuration
 
-Add `NextjsServiceResolver` in `config/app.imba` under `resolvers`:
+Add `NextjsServiceResolver` in the `config/app.imba` config under `resolvers`:
 
 ```js
 ...
