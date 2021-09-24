@@ -3,7 +3,7 @@
 React server-side rendering for Formidable with [Next.js](https://nextjs.org/docs/advanced-features/custom-server) framework.
 
 ![npm](https://img.shields.io/npm/v/@formidablejs/next-bridge)
-![GitHub](https://img.shields.io/github/license/@formidablejs/next-bridge)
+![GitHub](https://img.shields.io/github/license/formidablejs/next-bridge)
 
 ## Requirements
 
