@@ -27,7 +27,20 @@ craftsman publish --package @formidablejs/next-bridge -c -v
 
 ## Configuration
 
-Register the `next.imba` config file in the `config/index.imba` file:
+Add `NextjsServiceResolver` in `config/app.imba` under `resolvers`:
+
+```js
+{
+	...
+
+	resolvers: {
+		...
+		require('@formidablejs/next-bridge').NextjsServiceResolver
+```
+
+> Note, `NextjsServiceResolver` must be added after `/app/Resolvers/RouterServiceResolver`.
+
+Then, register the `next.imba` config file in the `config/index.imba` file:
 
 ```py
 ...
