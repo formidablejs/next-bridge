@@ -1,0 +1,35 @@
+{
+  "name": "@formidablejs/next-bridge",
+  "version": "0.0.1-alpha.1",
+  "description": "React server-side rendering for Formidable with Next.js framework.",
+  "author": "Donald Pakkies <donaldpakkies@gmail.com>",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "publisher": "publisher/Package.js",
+  "bugs": "https://github.com/formidablejs/next-bridge/issues",
+  "homepage": "https://formidablejs.org",
+  "repository": "https://github.com/formidablejs/next-bridge",
+  "files": [
+    "publisher",
+    "lib",
+    "types"
+  ],
+  "scripts": {
+    "build": "imbac src --output lib --platform node --format cjs --clean",
+    "watch": "imbac -w src --output=lib --platform=node --clean"
+  },
+  "dependencies": {
+    "fastify-nextjs": "6.0.0"
+  },
+  "peerDependencies": {
+    "@formidablejs/framework": ">=0.2.1-alpha.1 <0.3.0-alpha.1",
+    "@formidablejs/craftsman": ">=0.2.1-alpha.2 <0.3.0-alpha.1",
+    "next": ">=11.1.2 <12.0.0",
+    "react-dom": ">=17.0.2 <18.0.0",
+    "react": ">=17.0.2 <18.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^16.9.4",
+    "imba": "^2.0.0-alpha.172"
+  }
+}
