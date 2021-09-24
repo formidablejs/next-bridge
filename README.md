@@ -77,7 +77,7 @@ craftsman serve --dev
 
 ## Usage
 
-To register a new Next.js route, just return `next` helper method from your route:
+To register a new Next.js route, just return the `next` helper method from your route:
 
 ```py
 import { next } from '@formidablejs/next-bridge'
