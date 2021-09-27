@@ -1,10 +1,11 @@
 {
   "name": "@formidablejs/next-bridge",
-  "version": "0.1.0-alpha.1",
+  "version": "0.2.0-alpha.1",
   "description": "React server-side rendering for Formidable with Next.js framework.",
   "author": "Donald Pakkies <donaldpakkies@gmail.com>",
   "license": "MIT",
   "main": "lib/index.js",
+  "types": "types/index.d.ts",
   "publisher": "publisher/Package.js",
   "bugs": "https://github.com/formidablejs/next-bridge/issues",
   "homepage": "https://formidablejs.org",
@@ -15,21 +16,30 @@
     "types"
   ],
   "scripts": {
-    "build": "imbac src --output lib --platform node --format cjs --clean",
-    "watch": "imbac -w src --output=lib --platform=node --clean"
+    "build": "npm run imba:build && npm run imba:build:temp && npm run ts:build",
+    "imba:build": "imbac src --output=lib --platform=node --format=cjs --clean",
+    "imba:build:temp": "imbac src --output=.temp --platform=node --clean",
+    "imba:watch": "imbac -w src --output=lib --platform=node --clean",
+    "ts:build": "tsc",
+    "ts:watch": "tsc -w"
   },
   "dependencies": {
-    "fastify-nextjs": "6.0.0"
+    "fastify-nextjs": "6.0.0",
+    "typescript": "^4.4.3"
   },
   "peerDependencies": {
-    "@formidablejs/framework": ">=0.2.1-alpha.1",
-    "@formidablejs/craftsman": ">=0.2.1-alpha.2",
+    "@formidablejs/craftsman": "0.3.x",
+    "@formidablejs/framework": "0.3.x",
     "next": ">=11.1.2 <12.0.0",
-    "react-dom": ">=17.0.2 <18.0.0",
-    "react": ">=17.0.2 <18.0.0"
+    "react": ">=17.0.2 <18.0.0",
+    "react-dom": ">=17.0.2 <18.0.0"
   },
   "devDependencies": {
+    "@formidablejs/framework": "^0.3.0-alpha.4",
     "@types/node": "^16.9.4",
-    "imba": "^2.0.0-alpha.172"
+    "imba": "^2.0.0-alpha.172",
+    "next": "^11.1.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   }
 }
