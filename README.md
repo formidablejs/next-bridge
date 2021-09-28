@@ -99,6 +99,14 @@ Route.get '/', next do(request)
 	request.view('home')
 ```
 
+You can also load a custom view from a Controller action:
+
+```py
+Route.get '/', next [HomeController, 'index']
+```
+
+> Note: All Next.js routes must wrap the route action around the `next` helper method.
+
 ### React Props / data
 
 You may pass data to your react view:
@@ -166,6 +174,15 @@ Now, when visiting `/post/10`, the `Post` page will be loaded and the `:id` will
 For more information on dynamic routes, see the [Next.js](https://nextjs.org/docs/routing/dynamic-routes) documentation.
 
 > All your pages are be loaded from the `resources/js/pages` folder.
+
+### Status Codes
+
+To change a status, use the `status` function:
+
+```py
+Route.get '/home', next do(request)
+	request.status(302)
+```
 
 ### Error Handling
 
