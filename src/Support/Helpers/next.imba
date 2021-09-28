@@ -1,13 +1,15 @@
 import { helpers } from '@formidablejs/framework'
+import InvalidNextjsCallbackException from '../../Exceptions/InvalidNextjsCallbackException'
 import NextAction from '../NextAction'
 import NextService from '../NextService'
 
-export default def next callback\Function|undefined|null = null
-	if !helpers.isEmpty(callback) && (helpers.isFunction(callback) || helpers.isClass(callback))
-		const service = NextService
+def isAction callback\Function|[Function, string]
+	helpers.isArray(callback) && callback.length == 2 && helpers.isClass(callback[0]) && helpers.isString(callback[1])
 
-		service._action = new NextAction(callback)
+export default def next callback\Function|undefined|null|[Function, string] = null
+	if helpers.isEmpty(callback) then return new NextService
 
-		return service
+	if !(helpers.isFunction(callback) || helpers.isClass(callback) || isAction(callback))
+		throw new InvalidNextjsCallbackException "Next.js callback is not valid."
 
-	NextService
+	new NextAction(callback)
