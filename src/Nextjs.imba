@@ -16,6 +16,16 @@ export default class Nextjs
 
 		await self.kernel.resolveMiddleware(route, request, reply, config)
 
+		request.view = do(view\String, data\Object|null = null)
+			request.request.raw._view = view
+
+			request.props(data)
+
+		request.status = do(statusCode\Number)
+			request.request.raw._code = statusCode
+
+			request
+
 		request.props = do(data\Object = {})
 			const old = helpers.isEmpty(request.request.raw.formidable) ? {} : (request.request.raw.formidable.props ?? {})
 
@@ -23,4 +33,8 @@ export default class Nextjs
 				props: Object.assign(old, data)
 			}
 
-		await self.action.callback(request)
+			request
+
+		const callback = helpers.isArray(self.action.callback) ? (new self.action.callback[0])[self.action.callback[1]] : self.action.callback
+
+		await callback(request, reply)
